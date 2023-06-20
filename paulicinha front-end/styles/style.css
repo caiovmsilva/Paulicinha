@@ -7,7 +7,11 @@
     url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.ttf") format("truetype"), 
     url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.svg#IrisUPC") format("svg"); }
 
-body{
+:root{
+    --main-color: #f15a29!important;
+}
+
+    body{
     text-align: center;
     margin: 0;
 }
@@ -32,7 +36,7 @@ header{
     padding: 8px 10%;
     max-height: 85px;
     background-color: white;
-    border-bottom: 5px solid orange;
+    border-bottom: 5px solid var(--main-color)!important;;
 }
 
 #logo{
@@ -67,14 +71,15 @@ header #header_navbar{
 
 nav a{
     color:#4d4d4d!important;
+    text-decoration: none;
 }
 
 nav a:hover{
-    color: #f15a29!important;
+    color: var(--main-color)!important;
 }
 
 nav .active a{
-    color: #f15a29!important;
+    color: var(--main-color)!important;
 }
 
 nav li{
