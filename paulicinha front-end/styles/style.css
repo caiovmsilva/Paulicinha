@@ -1,0 +1,105 @@
+@import url(//db.onlinewebfonts.com/c/669380d64ad81d9f47e08914b5804cb2?family=IrisUPC);
+
+@font-face {font-family: "IrisUPC"; src: url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.eot"); 
+    src: url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.ttf") format("truetype"), 
+    url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.svg#IrisUPC") format("svg"); }
+
+body{
+    text-align: center;
+    margin: 0;
+}
+
+.m_content-container{
+    background-color: #333333;
+    padding: 20px;
+}
+
+main{
+    margin:0 0;
+    max-width: 100%;
+}
+
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: flex-start;
+    padding: 8px 10%;
+    max-height: 85px;
+    background-color: white;
+    border-bottom: 5px solid orange;
+}
+
+#logo{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+header img{
+    max-width: 100px;
+}
+
+header #header_navbar{
+    padding: center auto;
+    background: hsla(0, 0%, 100%, 0.7)!important;
+}
+
+.m_bg-light{
+    background-color: #f8f9fa!important;
+}
+
+.m_navbar{
+    padding: 0.5rem 1rem;
+}
+
+/* .m_navbar>.m_container{}*/
+
+
+.m_navbar>.m_container-fluid{
+    display:flex;
+}
+
+nav a{
+    color:#4d4d4d!important;
+}
+
+nav a:hover{
+    color: #f15a29!important;
+}
+
+nav .active a{
+    color: #f15a29!important;
+}
+
+nav li{
+    display: inline-block;
+    margin: 0px 25px;
+    padding: 8px;
+    font-size: 30px;
+    color: #4d4d4d!important;
+    margin: 0 25px!important;
+    font-family: IrisUPC;
+}
+
+nav .navbar_constrains{
+    display: flex;
+    margin: 0 0;
+    padding: 8 0;
+}
+
+.m_full-width-image{
+    width: 100%;
+    aspect-ratio: auto 1269 / 262;
+    height: 262px;
+}
+
+
+
+
+   /*.m_navbar,.m_navbar>.m_container,.m_navbar>.m_container-fluid{display:flex}.m_navbar{padding:0.5rem 1rem}*/
