@@ -1,0 +1,14 @@
+@media screen and (max-width: 768px){
+    header{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    ul{
+        text-align: center;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

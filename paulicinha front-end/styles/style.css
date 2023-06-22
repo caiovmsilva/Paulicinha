@@ -7,6 +7,10 @@
     url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.ttf") format("truetype"), 
     url("//db.onlinewebfonts.com/t/669380d64ad81d9f47e08914b5804cb2.svg#IrisUPC") format("svg"); }
 
+:root{
+    --main-color: #f15a29!important;
+}
+
 body{
     text-align: center;
     margin: 0;
@@ -30,23 +34,24 @@ header{
     text-align: center;
     justify-content: flex-start;
     padding: 8px 10%;
-    max-height: 85px;
+    max-height: 75px;
     background-color: white;
-    border-bottom: 5px solid orange;
+    border-bottom: 5px solid var(--main-color)!important;;
 }
 
 #logo{
+    margin-right: 16px;
+    padding: 5px 0;
     flex-direction: column;
     display: flex;
     justify-content: center;
 }
 
 header img{
-    max-width: 100px;
+    max-width: 120px;
 }
 
 header #header_navbar{
-    padding: center auto;
     background: hsla(0, 0%, 100%, 0.7)!important;
 }
 
@@ -65,38 +70,43 @@ header #header_navbar{
     display:flex;
 }
 
-nav a{
-    color:#4d4d4d!important;
-}
-
-nav a:hover{
-    color: #f15a29!important;
-}
-
-nav .active a{
-    color: #f15a29!important;
-}
-
-nav li{
-    display: inline-block;
-    margin: 0px 25px;
+nav .nav-link{
+    display: block;
+    text-decoration: none;
     padding: 8px;
     font-size: 30px;
     color: #4d4d4d!important;
-    margin: 0 25px!important;
+    margin: 0px 25px!important;
     font-family: IrisUPC;
+}
+
+nav a:hover{
+    color: var(--main-color)!important;
+}
+
+nav .nav-link-active{
+    color: var(--main-color)!important;
+}
+
+nav .nav-item{
+    list-style-type: none;    
 }
 
 nav .navbar_constrains{
     display: flex;
     margin: 0 0;
-    padding: 8 0;
+    padding: 8 40;
 }
 
 .m_full-width-image{
     width: 100%;
     aspect-ratio: auto 1269 / 262;
     height: 262px;
+}
+
+#photo{
+    max-width: 50%;
+    max-height: 450px;
 }
 
 
