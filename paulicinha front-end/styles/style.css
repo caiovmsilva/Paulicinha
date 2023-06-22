@@ -34,23 +34,24 @@ header{
     text-align: center;
     justify-content: flex-start;
     padding: 8px 10%;
-    max-height: 85px;
+    max-height: 75px;
     background-color: white;
     border-bottom: 5px solid var(--main-color)!important;;
 }
 
 #logo{
+    margin-right: 16px;
+    padding: 5px 0;
     flex-direction: column;
     display: flex;
     justify-content: center;
 }
 
 header img{
-    max-width: 100px;
+    max-width: 120px;
 }
 
 header #header_navbar{
-    padding: center auto;
     background: hsla(0, 0%, 100%, 0.7)!important;
 }
 
@@ -72,6 +73,11 @@ header #header_navbar{
 nav a{
     color:#4d4d4d!important;
     text-decoration: none;
+    padding: 8px;
+    font-size: 30px;
+    color: #4d4d4d!important;
+    margin: 0px 25px!important;
+    font-family: IrisUPC;
 }
 
 nav a:hover{
@@ -84,18 +90,13 @@ nav .active a{
 
 nav li{
     display: inline-block;
-    margin: 0px 25px;
-    padding: 8px;
-    font-size: 30px;
-    color: #4d4d4d!important;
-    margin: 0 25px!important;
-    font-family: IrisUPC;
+    
 }
 
 nav .navbar_constrains{
     display: flex;
     margin: 0 0;
-    padding: 8 0;
+    padding: 8 40;
 }
 
 .m_full-width-image{
