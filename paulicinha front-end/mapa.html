@@ -32,18 +32,22 @@
 
         </header>
         <main>
-            <div id="map"></div>
-            <div id="photo"></div>
+            <div id="export">
+                <div id="export-button">
+                    <button class="button-text" onclick="takeshot()">
+                        Export
+                    </button>    
+                </div>
+                <div id="mapa"></div>
+            </div>
 
-            <button onclick="takeshot()">
-                Take Screenshot
-            </button>
+            
 
             <h1>Screenshot:</h1>
             <div id="output"></div>
             <script type="text/javascript" src="js_files/screenshot.js"></script>
             <script type="text/javascript" src="js_files/mapa.js"></script>
-        </main>   
+       </main>   
         
         <footer>
             <p>© Pauliceia</p>

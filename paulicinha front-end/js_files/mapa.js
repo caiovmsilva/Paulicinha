@@ -3,7 +3,7 @@ var platform = new H.service.Platform({
   });
 var defaultLayers = platform.createDefaultLayers();
 
-var mapContainer = document.getElementById('photo');
+var mapContainer = document.getElementById('mapa');
 
 // Step 2: initialize a map
 var map = new H.Map(mapContainer, defaultLayers.vector.normal.map, {
@@ -23,4 +23,4 @@ window.addEventListener('resize', () => map.getViewPort().resize());
 var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 // Step 4: Create the default UI
-var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+//var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');

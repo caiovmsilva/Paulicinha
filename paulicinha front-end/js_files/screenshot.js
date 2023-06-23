@@ -1,7 +1,7 @@
 
 // Define a function that screenshots a div
 function takeshot(){
-    let div = document.getElementById('photo');
+    let div = document.getElementById('mapa');
     
 
     /*Uses the html2canvas function to take a screenshot
