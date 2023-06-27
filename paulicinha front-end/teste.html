@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <style>
+    #map {
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <button onclick="captureScreen()">Capturar tela</button>
+
+  <script>
+    // Variáveis globais
+    var map;
+    var platform;
+    var defaultLayers;
+
+    // Inicialização do mapa
+    function initializeMap() {
+      platform = new H.service.Platform({
+        apikey: 'ACM8qMJo8So95NDVvq39Uu8SIns7b7LmwEnMa9GInSI' // Substitua pela sua chave de API Here
+      });
+      defaultLayers = platform.createDefaultLayers();
+
+      // Configuração do mapa
+      map = new H.Map(
+        document.getElementById('map'),
+        defaultLayers.vector.normal.map,
+        {
+          center: { lat: 37.7397, lng: -121.4252 }, // Coordenadas de exemplo (Pleasanton, CA)
+          zoom: 12
+        }
+      );
+    }
+
+    // Função para capturar a tela
+    function captureScreen() {
+      var canvas = document.createElement('canvas');
+      canvas.width = map.getSize().x;
+      canvas.height = map.getSize().y;
+      var context = canvas.getContext('2d');
+      context.drawImage(map.getViewModel().getLookAtData().mapView.canvas, 0, 0);
+
+      var newWindow = window.open();
+      newWindow.document.write('<img src="' + canvas.toDataURL() + '" />');
+      newWindow.document.close();
+    }
+
+    // Inicialização do mapa ao carregar a página
+    window.onload = initializeMap;
+  </script>
+</body>
+</html>

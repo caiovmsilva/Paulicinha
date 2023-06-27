@@ -10,6 +10,7 @@
         <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
         <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
         <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+        <script type="text/javascript" src="https://raw.githubusercontent.com/1904labs/dom-to-image-more/main/src/dom-to-image-more.js"></script>
     </head>
     <body>
         <header>
@@ -34,20 +35,22 @@
         <main>
             <div id="export">
                 <div id="export-button">
-                    <button class="button-text" onclick="takeshot()">
+                    <button class="button-text" onclick="printscreen()">
                         Export
                     </button>    
                 </div>
-                <div id="mapa"></div>
+                <div id="mapa">
+                    <script type="text/javascript" src="js_files/mapa.js"></script>
+                </div>
             </div>
 
             
 
             <h1>Screenshot:</h1>
             <div id="output"></div>
-            <script type="text/javascript" src="js_files/screenshot.js"></script>
-            <script type="text/javascript" src="js_files/mapa.js"></script>
-       </main>   
+            <script type="text/javascript" src="js_files/dom-to-image.js"></script>
+<!--             <script type="text/javascript" src="js_files/screenshot.js"></script>
+ -->       </main>   
         
         <footer>
             <p>© Pauliceia</p>
