@@ -1,3 +1,5 @@
+
+// Gets access to the map's platform
 var platform = new H.service.Platform({
     apikey: 'ACM8qMJo8So95NDVvq39Uu8SIns7b7LmwEnMa9GInSI'
   });
@@ -13,7 +15,7 @@ var map = new H.Map(mapContainer, defaultLayers.vector.normal.map, {
   center: {lat: 48.869145, lng: 2.314298},
   pixelRatio: window.devicePixelRatio|| 1
 });
-// procurar um jeito de redimensionar o mapa para caber na div "photo"
+
 // add a resize listener to make sure that the map occupies the whole container
 window.addEventListener('resize', () => map.getViewPort().resize());
 
@@ -24,3 +26,4 @@ var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 // Step 4: Create the default UI
 //var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+var ui = H.ui.UI.createDefault(map, defaultLayers, 'pt - BR');

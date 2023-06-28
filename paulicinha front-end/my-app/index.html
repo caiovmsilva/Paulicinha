@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+        <title>Paulicinha</title>
+    </head>
+    <body>
+        <header>
+            <section id="logo">
+                <img src="/images/logo2.png">
+            </section>
+
+            <nav id="header_navbar">
+                <ul class="navbar_constrains">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Tabelão</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link nav-link-active">Mapa</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Layers</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="map"></div>
+            <script type="module" src="./main.js"></script>
+            <section class="overlay">
+                <div id="export">
+                    <button class="button-text" onclick="takeshot()">
+                        Export
+                    </button>
+                </div>
+            </section>
+            <script type="text/javascript" src="js_files/screenshot.js"></script>
+        </main>
+        <script></script>
+        <footer>
+            <p>© Pauliceia</p>
+        </footer>
+        
+    </body>
+</html>

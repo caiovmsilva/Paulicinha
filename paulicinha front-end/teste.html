@@ -2,8 +2,9 @@
 <html>
 <head>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <link rel="stylesheet" href="https://openlayers.org/en/v6.5.0/css/ol.css" type="text/css">
+  <script src="https://openlayers.org/en/v6.5.0/build/ol.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <style>
     #map {
       width: 800px;
@@ -18,38 +19,30 @@
   <script>
     // Variáveis globais
     var map;
-    var platform;
-    var defaultLayers;
 
     // Inicialização do mapa
     function initializeMap() {
-      platform = new H.service.Platform({
-        apikey: 'ACM8qMJo8So95NDVvq39Uu8SIns7b7LmwEnMa9GInSI' // Substitua pela sua chave de API Here
-      });
-      defaultLayers = platform.createDefaultLayers();
-
-      // Configuração do mapa
-      map = new H.Map(
-        document.getElementById('map'),
-        defaultLayers.vector.normal.map,
-        {
-          center: { lat: 37.7397, lng: -121.4252 }, // Coordenadas de exemplo (Pleasanton, CA)
+      map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-46.6334, -23.5507]), // Coordenadas de exemplo (Pleasanton, CA)
           zoom: 12
-        }
-      );
+        })
+      });
     }
 
     // Função para capturar a tela
     function captureScreen() {
-      var canvas = document.createElement('canvas');
-      canvas.width = map.getSize().x;
-      canvas.height = map.getSize().y;
-      var context = canvas.getContext('2d');
-      context.drawImage(map.getViewModel().getLookAtData().mapView.canvas, 0, 0);
-
-      var newWindow = window.open();
-      newWindow.document.write('<img src="' + canvas.toDataURL() + '" />');
-      newWindow.document.close();
+      html2canvas(document.getElementById('map')).then(function(canvas) {
+        // Exemplo: Exibir a captura em uma nova janela
+        var newWindow = window.open();
+        newWindow.document.write('<img src="' + canvas.toDataURL() + '" />');
+      });
     }
 
     // Inicialização do mapa ao carregar a página
