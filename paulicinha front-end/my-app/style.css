@@ -52,7 +52,7 @@ header img{
 }
 
 header #header_navbar{
-    background: hsla(0, 0%, 100%, 0.7)!important;
+    background: hsla(0, 0%, 100%, 0.702)!important;
 }
 
 nav .nav-link{
@@ -85,10 +85,26 @@ nav .navbar_constrains{
 
 #map {
   position: absolute;
-  top: 89px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 /*   width: 100%;
   height: 100%; */
+}
+
+#button-text{
+    position:absolute;
+    left: 30px;
+    top: 100px; 
+}
+
+#logo-image{
+    position:absolute!important;
+    bottom: 10px!important;
+    right: 10px!important;
+    z-index: 9999!important;
+    max-width: 80px;
+    background-color: hsla(0, 0%, 100%, 0.587);
+    display: none;
 }

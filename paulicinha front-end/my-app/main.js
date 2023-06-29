@@ -3,7 +3,8 @@ import {Map, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 
-const map = new Map({
+/* function inicializeMap(){
+ */  map = new Map({
   target: 'map',
   layers: [
     new TileLayer({
@@ -13,5 +14,7 @@ const map = new Map({
   view: new View({
     center: [0, 0],
     zoom: 2
-  })
-});
+    })
+  });
+/* } */
+
