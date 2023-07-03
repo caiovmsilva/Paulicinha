@@ -52,8 +52,18 @@
       // Função para capturar a tela
       function captureScreen() {
 
+        // Aumentar a resolução do canvas
+        var canvas = document.createElement('canvas');
+        var scale = 4; // Fator de escala (aumenta a resolução em 2 vezes)
+        canvas.width = map.getSize()[0] * scale;
+        canvas.height = map.getSize()[1] * scale;
+        canvas.style.width = map.getSize()[0] + 'px';
+        canvas.style.height = map.getSize()[1] + 'px';
+
+
         var options = {
-          scale: 0.75 ,// ajusta a escala 
+          scale: scale ,// ajusta a escala 
+          canvas: canvas
           /* useCORS: true */
         };
 
