@@ -1,6 +1,6 @@
 # Paulicinha
 Protótipo do Projeto Pauliceia 2.0
 
-Para utilização desse projeto, basta rodar o arquivo html "index.html".
+Para utilização do template desse projeto, basta rodar o arquivo "index.html" localizado na pasta teste.
 
-Há uma outra página chamada "mapa.html" que possui a base do protótipo de exportação de um mapa.
+Na pasta 'Prototype' encontra-se o protótipo da interface de exportação de imagens para o projeto de Iniciação Científica orientado pela professora Dra. Karla Fook
