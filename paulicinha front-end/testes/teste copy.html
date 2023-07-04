@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="my-app/style.css">
+  <title>Paulicinha</title>
+</head>
+<body>
+  <header>
+    <section id="logo">
+      <img src="my-app/images/logo2.png">
+    </section>
+    <nav id="header_navbar">
+      <ul class="navbar_constrains">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Tabelão</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link nav-link-active">Mapa</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Layers</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="map"></div>
+    <img id="logo-image" src="my-app/images/logo2.png">
+    <button id= "button-text" onclick="captureScreen()">Capturar tela</button>
+
+    <script>
+      // Variáveis globais
+      var map;
+
+      // Inicialização do mapa
+      function initializeMap() {
+        map = new ol.Map({
+          target: 'map',
+          layers: [
+            new ol.layer.Tile({
+              source: new ol.source.OSM()
+            })
+          ],
+          view: new ol.View({
+            center: ol.proj.fromLonLat([-46.6334, -23.5507]), // Coordenadas de exemplo (Pleasanton, CA)
+            zoom: 14.5
+          })
+        });
+      }
+
+      // Função para capturar a tela
+      function captureScreen() {
+
+        // Aumentar a resolução do canvas
+        var canvas = document.createElement('canvas');
+        var scale = 4; // Fator de escala (aumenta a resolução em 2 vezes)
+        canvas.width = map.getSize()[0] * scale;
+        canvas.height = map.getSize()[1] * scale;
+        canvas.style.width = map.getSize()[0] + 'px';
+        canvas.style.height = map.getSize()[1] + 'px';
+
+
+        var options = {
+          scale: scale ,// ajusta a escala 
+          canvas: canvas
+          /* useCORS: true */
+        };
+
+        // Ocultar elementos indesejados
+
+        // Oculta as atribuições do OpenLayers da captura
+        var attribution = document.getElementsByClassName('ol-attribution');
+        if (attribution.length > 0){
+          attribution[0].style.display = 'none';
+        }
+
+        // Oculta o elemento de zoom da captura
+        var zoom = document.getElementsByClassName('ol-zoom')
+        if (zoom.length > 0){
+          zoom[0].style.display = 'none';
+        }
+
+        /* // Exibir a imagem da logo
+        logoImage.style.display = 'block'; */
+
+        // Exibir a imagem da logo
+        var logoImage = document.getElementById('logo-image');
+        logoImage.style.display = 'block';
+
+        
+
+        html2canvas(document.getElementById('map'), options).then(function(canvas) {
+          //Exibir elemetentos ocultos novamente
+          if (attribution.length > 0){
+            attribution[0].style.display = 'block';
+          }
+
+          if (zoom.length > 0){
+            zoom[0].style.display = 'block';
+          }
+
+          // Ocultar a imagem da logo
+          logoImage.style.display = 'none';
+          
+          // Exemplo: Exibir a captura em uma nova janela
+          var newWindow = window.open();
+
+          // Criar uma imagem com a captura de tela
+          var img = new Image();
+          img.src = canvas.toDataURL();
+
+          /* img.style.margin = '20px 0'; */
+  /*           img.style.position = 'absolute'
+  */
+          newWindow.document.body.appendChild(img);
+          document.getElementById('map').appendChild(logoImage);
+        });
+          
+          
+      }
+
+      /* // Inicialização do mapa ao carregar a página
+      window.onload = function(){
+        initializeMap();
+      } */
+
+      /* // Criar a imagem do logo
+        logoImage = document.createElement('img');
+        logoImage.id = 'logo-image';
+        logoImage.src = 'my-app/images/logo2.png';
+        logoImage.style.position = 'absolute';
+        logoImage.style.bottom = '10px';
+        logoImage.style.right = '10px';
+        logoImage.style.zIndex = '9999';
+        logoImage.style.maxWidth = '100px';
+        logoImage.style.backgroundColor = 'hsla(0, 0%, 100%, 0.587)';
+        document.getElementById('map').appendChild(logoImage); */
+
+      // Inicialização do mapa ao carregar a página
+      window.onload = initializeMap;
+    </script>
+  </main>
+  
+</body>
+</html>

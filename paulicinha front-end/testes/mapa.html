@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src = "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+        <script src = ""
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    </head>
+    <body>
+        <header>
+                <section id="logo">
+                    <img src="images/logo2.png">
+                </section>
+
+                <nav id="header_navbar">
+                    <ul class="navbar_constrains">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> 
+                        <li class="nav-item"><a href="#" class="nav-link">Tabelão</a></li> 
+                        <!--A sintaxe 'nav-link nav-link-active' quer dizer que o elemento possui as propriedades de ambas as classes-->
+                        <li class="nav-item"><a href="mapa.html" class="nav-link nav-link-active">Mapa</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Layers</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>  
+                        <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li> 
+
+                    </ul>
+                </nav>
+
+        </header>
+        <main>
+            
+            <div id="export">
+                <div id="export-button">
+                    <button class="button-text" onclick="takeshot()">
+                        Export
+                    </button>    
+                </div>
+                <div id="mapa">
+                    <script type="module" src="my-app/main.js"></script>
+                </div>
+            </div>
+
+            
+
+            <h1>Screenshot:</h1>
+            <div id="output"></div>
+            <!-- <script type="text/javascript" src="js_files/dom-to-image.js"></script> -->
+            <script type="text/javascript" src="js_files/screenshot.js"></script>
+        </main>   
+        
+        <footer>
+            <p>© Pauliceia</p>
+        </footer>
+
+    </body>
+</html>
