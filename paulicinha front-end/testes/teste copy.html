@@ -5,13 +5,13 @@
   <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <link rel="stylesheet" href="my-app/style.css">
+  <link rel="stylesheet" href="/prototype/style.css">
   <title>Paulicinha</title>
 </head>
 <body>
   <header>
     <section id="logo">
-      <img src="my-app/images/logo2.png">
+      <img src="/prototype/images/logo2.png">
     </section>
     <nav id="header_navbar">
       <ul class="navbar_constrains">
@@ -26,7 +26,7 @@
   </header>
   <main>
     <div id="map"></div>
-    <img id="logo-image" src="my-app/images/logo2.png">
+    <img id="logo-image" src="/prototype/images/logo2.png">
     <button id= "button-text" onclick="captureScreen()">Capturar tela</button>
 
     <script>
@@ -54,7 +54,7 @@
 
         // Aumentar a resolução do canvas
         var canvas = document.createElement('canvas');
-        var scale = 4; // Fator de escala (aumenta a resolução em 2 vezes)
+        var scale = 3; // Fator de escala (aumenta a resolução em 2 vezes)
         canvas.width = map.getSize()[0] * scale;
         canvas.height = map.getSize()[1] * scale;
         canvas.style.width = map.getSize()[0] + 'px';
