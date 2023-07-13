@@ -125,7 +125,7 @@ nav .navbar_constrains{
     bottom: 10px!important;
     right: 10px!important;
     z-index: 9999!important;
-    max-width: 80px;
+    max-width: 250px;
     background-color: hsla(0, 0%, 100%, 0.587);
     display: none;
 }
